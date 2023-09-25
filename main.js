@@ -50,7 +50,7 @@ function comprarProductos(){
 // 1 fideos 2 harina 3 pan 4 cocacola   productos=[harina,cocaCola,pan,]
 // compro harina indice 0 = cuantas unidades?  quier 20
 // usted compro 20 unidades de harina
-//NO LOGRE HACERLO SIQUIERA CON EL CHATGPT.
+//NO LOGRE HACERLO SIQUIERA CON EL CHATGPT. =S
 }
 
 //
