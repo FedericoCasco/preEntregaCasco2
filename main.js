@@ -27,7 +27,7 @@ class producto{
   let cocaCola=new producto('coca cola',10,'2025/11/05',20);
   let pan=new producto('pan',1,'2024/12/05',30)
   let fideo=new producto('fideo',450,'2025/12/04',40);
-  let mermelada=new producto('mermelada',810,'2023/12/07',90);
+  let mermelada=new producto('mermelada',810,'2023/12/07',90); 
 
   //array de productos, voy a sumar mas en el futuro....
 const productos=[harina,cocaCola,pan,fideo,mermelada]  
@@ -41,7 +41,7 @@ function agregarProducto(){
       let fechaVencidmiento=prompt('ingrese la fecha de vencimiento en formato \n 0000/00/00 \n Año/mes/dia')
       let nuevoProducto = new producto(nombre,precio,fechaVencidmiento,stock)
 productos.push(nuevoProducto)
-}
+}   
 
 
 
@@ -63,7 +63,7 @@ function verProducto(){
         const nombre= detalle.nombre;
         Nombres.push(nombre);
       })
-      let productoSeleccionado= prompt(`Tenemos los siguientes productos : \n${Nombres}\nCual desea ver`);
+      let productoSeleccionado= prompt(`De cuál de estos productos desea saber el Stock disponible ? \n\n${Nombres}\n\nEscriba el producto a continuación :`);
    
     // use find para encontrar el producto seleccionado        
       let pepito=productos.find((producto)=>producto.nombre ===productoSeleccionado)
@@ -75,9 +75,9 @@ function verProducto(){
   while(iniciar===0){
     let seleccion=parseInt(prompt('Escriba en valor "Número" la opcion deseada :  \n\n1. Crear productos\n2. Comprar producto (no disponible por el momento)\n3. Ver stock de productos\n4. Salir'));
   
-    if(seleccion===1){
+  if(seleccion===1){
       agregarProducto()
-    }
+  }
 
     // Aca defino la función para mostrar el stock de todos los productos
   if(seleccion===3){
