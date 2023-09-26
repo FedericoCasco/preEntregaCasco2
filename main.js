@@ -3,12 +3,6 @@
 /////3 ver stock de productos
 /////4  salir vuelva pronto . 
 
-
-
-
-
-
-
 //creo la clase productos.
 class producto{
     constructor(nombre,precio,fechaVencimiento,stock){
@@ -21,7 +15,6 @@ class producto{
           alert(`el precio total con iva es ${producto.precio}*${1.15}`)
         }
   }
-  
   
   let harina=new producto('harina',5,'2023/12/05',10);
   let cocaCola=new producto('coca cola',10,'2025/11/05',20);
@@ -71,9 +64,26 @@ function verProducto(){
       alert( `Hay ${pepito.stock} unidades disponibles de ${pepito.nombre}`)
   }
   
+  function verPrecio(){
+    // use for each para buscar los nombres de los productos
+       let Nombres=[];
+  
+      productos.forEach((detalle)=>{
+  
+        const nombre= detalle.nombre;
+        Nombres.push(nombre);
+      })
+      let productoSeleccionado= prompt(`De cuál de estos productos desea saber el Precio por Unidad ? \n\n${Nombres}\n\nEscriba el producto a continuación :`);
+   
+    // use find para encontrar el producto seleccionado        
+      let pepito2=productos.find((producto)=>producto.nombre ===productoSeleccionado)
+  
+      alert( `El precio x unidad de ${pepito2.nombre} es  de ${pepito2.precio}$ `)
+  }
+
   let iniciar=0;
   while(iniciar===0){
-    let seleccion=parseInt(prompt('Escriba en valor "Número" la opcion deseada :  \n\n1. Crear productos\n2. Comprar producto (no disponible por el momento)\n3. Ver stock de productos\n4. Salir'));
+    let seleccion=parseInt(prompt('Escriba en valor "Número" la opcion deseada :  \n\n1. Crear producto y agregar a la lista.\n2. Comprar producto (no disponible por el momento)\n3. Ver stock de productos\n4. Ver precio de la unidad del producto \n5. Salir'));
   
   if(seleccion===1){
       agregarProducto()
@@ -85,6 +95,10 @@ function verProducto(){
   }
 
   if(seleccion===4){
+    verPrecio()
+  }
+
+  if(seleccion===5){
     alert ('gracias por elegirnos, esperamos su proximo pedido!')
     break
   }
