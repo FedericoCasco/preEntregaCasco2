@@ -47,7 +47,7 @@ function comprarProductos(){
 }
 
 //
-function verProducto(){
+function verStockProducto(){
     // use for each para buscar los nombres de los productos
        let Nombres=[];
   
@@ -81,9 +81,26 @@ function verProducto(){
       alert( `El precio x unidad de ${pepito2.nombre} es  de ${pepito2.precio}$ `)
   }
 
+  function verInfoCompleta(){
+    // use for each para buscar los nombres de los productos
+       let Nombres=[];
+  
+      productos.forEach((detalle)=>{
+  
+        const nombre= detalle.nombre;
+        Nombres.push(nombre);
+      })
+      let productoSeleccionado= prompt(`De cuál de estos productos desea saber el Precio por Unidad ? \n\n${Nombres}\n\nEscriba el producto a continuación :`);
+   
+    // use find para encontrar el producto seleccionado        
+      let pepito3=productos.find((producto)=>producto.nombre ===productoSeleccionado)
+  
+      alert( `La Informacion completa del producto ${pepito3.nombre} es de : \n-Precio : ${pepito3.precio}$\n-F.Vencimiento : ${pepito3.fechaVencimiento}\n-Stock :  ${pepito3.stock}`)
+  }
+
   let iniciar=0;
   while(iniciar===0){
-    let seleccion=parseInt(prompt('Escriba en valor "Número" la opcion deseada :  \n\n1. Crear producto y agregar a la lista.\n2. Comprar producto (no disponible por el momento)\n3. Ver stock de productos\n4. Ver precio de la unidad del producto \n5. Salir'));
+    let seleccion=parseInt(prompt('Escriba en valor "Número" la opcion deseada :  \n\n1. Crear producto y agregar a la lista.\n2. Comprar producto (no disponible por el momento)\n3. Ver stock de productos\n4. Ver precio de la unidad del producto \n5. Ver Información completa del producto \n6. Salir'));
   
   if(seleccion===1){
       agregarProducto()
@@ -91,7 +108,7 @@ function verProducto(){
 
     // Aca defino la función para mostrar el stock de todos los productos
   if(seleccion===3){
-    verProducto()
+    verStockProducto()
   }
 
   if(seleccion===4){
@@ -99,6 +116,10 @@ function verProducto(){
   }
 
   if(seleccion===5){
+    verInfoCompleta()
+  }
+
+  if(seleccion===6){
     alert ('gracias por elegirnos, esperamos su proximo pedido!')
     break
   }
