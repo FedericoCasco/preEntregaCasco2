@@ -31,8 +31,8 @@ function agregarProducto(){
       let nombre=prompt('ingrese el nombre de producto para agregar en la lista');
       let precio=parseInt(prompt('ingrese el precio del producto'))
       let stock=parseInt(prompt('ingrese el numero de stock disponible'));  
-      let fechaVencidmiento=prompt('ingrese la fecha de vencimiento en formato \n 0000/00/00 \n Año/mes/dia')
-      let nuevoProducto = new producto(nombre,precio,fechaVencidmiento,stock)
+      let fechaVencimiento=prompt('ingrese la fecha de vencimiento en formato \n 0000/00/00 \n Año/mes/dia')
+      let nuevoProducto = new producto(nombre,precio,fechaVencimiento,stock)
 productos.push(nuevoProducto)
 }   
 
@@ -59,7 +59,7 @@ function verStockProducto(){
       let productoSeleccionado= prompt(`De cuál de estos productos desea saber el Stock disponible ? \n\n${Nombres}\n\nEscriba el producto a continuación :`);
    
     // use find para encontrar el producto seleccionado        
-      let pepito=productos.find((producto)=>producto.nombre ===productoSeleccionado)
+      let pepito=productos.find((producto)=>producto.nombre === productoSeleccionado)
   
       alert( `Hay ${pepito.stock} unidades disponibles de ${pepito.nombre}`)
   }
@@ -76,7 +76,7 @@ function verStockProducto(){
       let productoSeleccionado= prompt(`De cuál de estos productos desea saber el Precio por Unidad ? \n\n${Nombres}\n\nEscriba el producto a continuación :`);
    
     // use find para encontrar el producto seleccionado        
-      let pepito2=productos.find((producto)=>producto.nombre ===productoSeleccionado)
+      let pepito2=productos.find((producto)=>producto.nombre === productoSeleccionado)
   
       alert( `El precio x unidad de ${pepito2.nombre} es  de ${pepito2.precio}$ `)
   }
@@ -86,14 +86,14 @@ function verStockProducto(){
        let Nombres=[];
   
       productos.forEach((detalle)=>{
-  
+        
         const nombre= detalle.nombre;
         Nombres.push(nombre);
       })
       let productoSeleccionado= prompt(`De cuál de estos productos desea saber el Precio por Unidad ? \n\n${Nombres}\n\nEscriba el producto a continuación :`);
    
     // use find para encontrar el producto seleccionado        
-      let pepito3=productos.find((producto)=>producto.nombre ===productoSeleccionado)
+      let pepito3=productos.find((producto)=>producto.nombre === productoSeleccionado)
   
       alert( `La Informacion completa del producto ${pepito3.nombre} es de : \n-Precio : ${pepito3.precio}$\n-F.Vencimiento : ${pepito3.fechaVencimiento}\n-Stock :  ${pepito3.stock}`)
   }
@@ -116,7 +116,8 @@ function verStockProducto(){
   }
 
   if(seleccion===5){
-    verInfoCompleta()
+    verInfoComp
+    leta()
   }
 
   if(seleccion===6){
